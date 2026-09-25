@@ -205,60 +205,30 @@ h1, h2, .center-title {
   width: 344px;
   height: 432px;
   margin-left: auto;
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
 }
 
-.hero-cards-image {
-  display: block;
-  width: 344px;
-  height: auto;
-  max-width: none;
-  filter: drop-shadow(0 18px 36px rgba(0,0,0,.18));
-}
 .event-card {
   position: absolute;
   width: 260px;
+  overflow: hidden;
   border-radius: 10px;
-  overflow: hidden;
+  background: #1a2030;
   filter: drop-shadow(0 4px 35px rgba(0,0,0,.25));
+  transform-origin: center;
 }
-.event-card .event-art {
+
+.event-card__media {
   height: 190px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
+  background-color: #2c3345;
+  background-image:
+    linear-gradient(180deg, rgba(20,24,34,0) 45%, rgba(20,24,34,.24) 100%),
+    var(--card-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
-.event-card .event-art::before,
-.collection-art::before {
-  content: "";
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  right: -45px;
-  top: -55px;
-  background: rgba(255,255,255,.15);
-  box-shadow: -70px 80px 0 rgba(255,255,255,.07);
-  z-index: -1;
-}
-.event-art span {
-  font-size: 12px;
-  letter-spacing: .24em;
-  opacity: .8;
-}
-.event-art b {
-  font-family: "Lora", serif;
-  font-size: 26px;
-  line-height: 1.05;
-}
-.event-card footer,
-.collection-card footer {
+
+.event-card__footer {
   height: 44px;
   display: flex;
   align-items: center;
@@ -269,9 +239,17 @@ h1, h2, .center-title {
   color: #fff;
   backdrop-filter: blur(4px);
   font-size: 16px;
+  line-height: 1.5;
 }
-.event-card footer em,
-.collection-card footer em {
+
+.event-card__footer > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.event-card__footer em {
+  flex: 0 0 auto;
   font-style: normal;
   padding: 4px 8px;
   border-radius: 60px;
@@ -280,12 +258,31 @@ h1, h2, .center-title {
   font-weight: 700;
   line-height: 1.2;
 }
-.event-newyear { left: 0; top: 0; transform: rotate(-6deg); }
-.event-newyear .event-art { background: linear-gradient(145deg, #356cc8 0%, #1a4a8a 56%, #14243d 100%); }
-.event-wedding { left: 75px; top: 94px; transform: rotate(3deg); }
-.event-wedding .event-art { background: linear-gradient(145deg, #dba9c8, #8b3a6e 65%, #4b213d); }
-.event-birthday { left: 52px; top: 235px; transform: rotate(-3deg); }
-.event-birthday .event-art { background: linear-gradient(145deg, #ffbc58, #b35c00 68%, #553017); }
+
+.event-newyear {
+  left: 0;
+  top: 0;
+  z-index: 3;
+  transform: rotate(-6deg);
+}
+
+.event-wedding {
+  left: 75px;
+  top: 94px;
+  z-index: 2;
+  transform: rotate(3deg);
+}
+
+.event-birthday {
+  left: 52px;
+  top: 235px;
+  z-index: 1;
+  transform: rotate(-3deg);
+}
+
+.event-newyear .event-card__media { background-color: #1a4a8a; }
+.event-wedding .event-card__media { background-color: #8b3a6e; }
+.event-birthday .event-card__media { background-color: #b35c00; }
 
 .hero-glow {
   position: absolute;
