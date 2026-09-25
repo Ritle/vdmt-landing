@@ -59,12 +59,43 @@
           </div>
         </div>
 
-        <div class="hero-visual">
-          <img
-            class="hero-cards-image"
-            src="assets/hero-cards.svg"
-            alt="Подборки МедиаШОУ+: Новый год, Свадьба и День рождения"
+        <div class="hero-visual" aria-label="Примеры подборок МедиаШОУ+">
+          <!--
+            Чтобы заменить изображения, просто положи свои файлы в assets/
+            и поменяй путь в --card-image у нужной карточки.
+          -->
+          <article
+            class="event-card event-newyear"
+            style="--card-image: url('assets/hero-newyear.jpg');"
           >
+            <div class="event-card__media" role="img" aria-label="Новогодняя подборка"></div>
+            <footer class="event-card__footer">
+              <span>🎆 Новый год</span>
+              <em>NEW</em>
+            </footer>
+          </article>
+
+          <article
+            class="event-card event-wedding"
+            style="--card-image: url('assets/hero-wedding.jpg');"
+          >
+            <div class="event-card__media" role="img" aria-label="Свадебная подборка"></div>
+            <footer class="event-card__footer">
+              <span>💍 Свадьба</span>
+              <em>NEW</em>
+            </footer>
+          </article>
+
+          <article
+            class="event-card event-birthday"
+            style="--card-image: url('assets/hero-birthday.jpg');"
+          >
+            <div class="event-card__media" role="img" aria-label="Подборка ко дню рождения"></div>
+            <footer class="event-card__footer">
+              <span>🎉 День рождения</span>
+              <em>NEW</em>
+            </footer>
+          </article>
         </div>
       </div>
     </section>
