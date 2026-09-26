@@ -4,32 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="МедиаШОУ+ — каталог материалов для ВидеоМОНТАЖ: шаблоны, футажи, музыка, эффекты и переходы.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="МедиаШОУ+ — 7000+ материалов для ВидеоМОНТАЖ">
+  <meta property="og:description" content="Шаблоны, футажи, музыка, эффекты и переходы для ваших видео.">
   <title>МедиаШОУ+ — 7000+ материалов для ВидеоМОНТАЖ</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="МедиаШОУ+">
-        <span class="brand-mark" aria-hidden="true">▶</span>
-        <span class="brand-text">МедиаШОУ+</span>
+      <a class="brand" href="#top" aria-label="ВидеоМОНТАЖ — к началу страницы">
+        <span class="brand-mark" data-asset-slot="header-logo" aria-hidden="true"></span>
       </a>
 
-      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+      <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-controls="main-nav" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
 
-      <nav class="main-nav" aria-label="Основная навигация">
+      <nav class="main-nav" id="main-nav" aria-label="Основная навигация">
         <a href="#composition">Состав</a>
         <a href="#advantages">Преимущества</a>
         <a href="#audience">Для кого</a>
         <a href="#pricing">Тарифы</a>
         <a href="#faq">FAQ</a>
         <a class="btn btn-small" href="#pricing">
-          <span class="btn-icon">↗</span>
+          <span class="btn-icon" data-asset-slot="buy-icon" aria-hidden="true"></span>
           Купить
         </a>
       </nav>
@@ -38,21 +40,15 @@
 
   <main id="top">
     <section class="hero">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-      <span class="spark spark-a"></span>
-      <span class="spark spark-b"></span>
-      <span class="spark spark-c"></span>
-
       <div class="container hero-inner">
         <div class="hero-copy">
-          <div class="eyebrow"><span>✦</span> Подписка МедиаШОУ+</div>
+          <div class="eyebrow"><span data-asset-slot="subscription-icon" aria-hidden="true"></span> Подписка МедиаШОУ+</div>
           <h1>Каталог МедиаШОУ+ <span>7000+ материалов</span></h1>
           <p>Превратите свои видео в фильмы, поздравления и семейные истории всего за несколько минут. Шаблоны, музыка, эффекты и переходы — всё уже внутри ВидеоМОНТАЖа.</p>
 
           <div class="hero-actions">
             <a class="btn btn-primary" href="#pricing">
-              <span class="btn-icon">↗</span>
+              <span class="btn-icon" data-asset-slot="buy-icon" aria-hidden="true"></span>
               Купить
             </a>
             <span class="price-note">Всего 990₽ в год</span>
@@ -60,39 +56,26 @@
         </div>
 
         <div class="hero-visual" aria-label="Примеры подборок МедиаШОУ+">
-          <!--
-            Чтобы заменить изображения, просто положи свои файлы в assets/
-            и поменяй путь в --card-image у нужной карточки.
-          -->
-          <article
-            class="event-card event-newyear"
-            style="--card-image: url('assets/hero-newyear.png');"
-          >
-            <div class="event-card__media" role="img" aria-label="Новогодняя подборка"></div>
+          <article class="event-card event-newyear">
+            <div class="event-card__media" data-asset-slot="hero-newyear" aria-hidden="true"></div>
             <footer class="event-card__footer">
-              <span>🎆 Новый год</span>
+              <span>Новый год</span>
               <em>NEW</em>
             </footer>
           </article>
 
-          <article
-            class="event-card event-wedding"
-            style="--card-image: url('assets/hero-wedding.png');"
-          >
-            <div class="event-card__media" role="img" aria-label="Свадебная подборка"></div>
+          <article class="event-card event-wedding">
+            <div class="event-card__media" data-asset-slot="hero-wedding" aria-hidden="true"></div>
             <footer class="event-card__footer">
-              <span>💍 Свадьба</span>
+              <span>Свадьба</span>
               <em>NEW</em>
             </footer>
           </article>
 
-          <article
-            class="event-card event-birthday"
-            style="--card-image: url('assets/hero-birthday.png');"
-          >
-            <div class="event-card__media" role="img" aria-label="Подборка ко дню рождения"></div>
+          <article class="event-card event-birthday">
+            <div class="event-card__media" data-asset-slot="hero-birthday" aria-hidden="true"></div>
             <footer class="event-card__footer">
-              <span>🎉 День рождения</span>
+              <span>День рождения</span>
               <em>NEW</em>
             </footer>
           </article>
@@ -104,22 +87,22 @@
       <div class="container">
         <div class="stats">
           <article>
-            <div class="stat-icon">▣</div>
+            <div class="stat-icon" data-asset-slot="stat-templates" aria-hidden="true"></div>
             <strong>1000+</strong>
             <span>шаблонов, титров и заставок</span>
           </article>
           <article>
-            <div class="stat-icon">▥</div>
+            <div class="stat-icon" data-asset-slot="stat-effects" aria-hidden="true"></div>
             <strong>1000+</strong>
             <span>переходов и видеоэффектов</span>
           </article>
           <article>
-            <div class="stat-icon">✦</div>
+            <div class="stat-icon" data-asset-slot="stat-footage" aria-hidden="true"></div>
             <strong>3000+</strong>
             <span>футажей, анимаций и стикеров</span>
           </article>
           <article>
-            <div class="stat-icon">♫</div>
+            <div class="stat-icon" data-asset-slot="stat-music" aria-hidden="true"></div>
             <strong>2000+</strong>
             <span>музыкальных треков различных жанров</span>
           </article>
@@ -136,48 +119,52 @@
         </div>
 
         <div class="editor-cards" aria-label="Категории материалов">
-          <article class="media-card media-stickers"><div class="media-art">✨ 🎉 ⭐</div><span>Стикеры</span></article>
-          <article class="media-card media-frames"><div class="media-art frame-art"><i></i></div><span>Рамки</span></article>
-          <article class="media-card media-templates"><div class="media-art template-art"><b>01</b><b>02</b><b>03</b></div><span>Шаблоны</span></article>
-          <article class="media-card media-footage"><div class="media-art footage-art"><span></span><span></span><span></span></div><span>Футажи</span></article>
+          <article class="media-card media-stickers"><div class="media-art" data-asset-slot="category-stickers" aria-hidden="true"></div><span>Стикеры</span></article>
+          <article class="media-card media-frames"><div class="media-art" data-asset-slot="category-frames" aria-hidden="true"></div><span>Рамки</span></article>
+          <article class="media-card media-templates"><div class="media-art" data-asset-slot="category-templates" aria-hidden="true"></div><span>Шаблоны</span></article>
+          <article class="media-card media-footage"><div class="media-art" data-asset-slot="category-footage" aria-hidden="true"></div><span>Футажи</span></article>
         </div>
       </div>
     </section>
 
-    <section class="section section-soft collections-section" id="advantages">
+    <section class="section section-soft collections-section" id="collections">
       <div class="container">
         <div class="section-head centered">
           <h2>Новые подборки каждый месяц</h2>
           <p>К Новому году — праздничные шаблоны и музыка. К выпускному — трогательные титры и переходы. К лету — атмосферные футажи для отпускных видео.</p>
         </div>
 
-        <div class="chip-list" data-tabs>
-          <button class="chip" type="button">Новый год</button>
-          <button class="chip" type="button">День Победы</button>
-          <button class="chip" type="button">Выпускной</button>
-          <button class="chip" type="button">Последний звонок</button>
-          <button class="chip active" type="button">День рождения</button>
-          <button class="chip" type="button">Юбилей</button>
-          <button class="chip" type="button">День матери</button>
-          <button class="chip" type="button">Свадьба</button>
-          <button class="chip" type="button">Путешествия</button>
-          <button class="chip" type="button">Каникулы</button>
-          <button class="chip" type="button">Хобби</button>
-          <button class="chip" type="button">Отпуск</button>
+        <div class="chip-list" data-collection-filter aria-label="Темы подборок">
+          <button class="chip" type="button" data-theme="newyear" aria-pressed="false">Новый год</button>
+          <button class="chip" type="button" data-theme="victory" aria-pressed="false">День Победы</button>
+          <button class="chip" type="button" data-theme="graduation" aria-pressed="false">Выпускной</button>
+          <button class="chip" type="button" data-theme="lastbell" aria-pressed="false">Последний звонок</button>
+          <button class="chip" type="button" data-theme="birthday" aria-pressed="false">День рождения</button>
+          <button class="chip" type="button" data-theme="anniversary" aria-pressed="false">Юбилей</button>
+          <button class="chip" type="button" data-theme="mothersday" aria-pressed="false">День матери</button>
+          <button class="chip" type="button" data-theme="wedding" aria-pressed="false">Свадьба</button>
+          <button class="chip" type="button" data-theme="travel" aria-pressed="false">Путешествия</button>
+          <button class="chip" type="button" data-theme="holidays" aria-pressed="false">Каникулы</button>
+          <button class="chip" type="button" data-theme="hobby" aria-pressed="false">Хобби</button>
+          <button class="chip" type="button" data-theme="vacation" aria-pressed="false">Отпуск</button>
         </div>
 
         <div class="collection-grid">
-          <article class="collection-card collection-birthday">
-            <div class="collection-art"><span>MAKE A WISH</span></div>
-            <footer><span>🎂 День рождения</span><em>NEW</em></footer>
+          <article class="collection-card collection-birthday" data-collection-theme="birthday">
+            <div class="collection-art" data-asset-slot="collection-birthday" aria-hidden="true"></div>
+            <footer><span>День рождения</span><em>NEW</em></footer>
           </article>
-          <article class="collection-card collection-wedding">
-            <div class="collection-art"><span>OUR DAY</span></div>
-            <footer><span>💍 Свадьба</span><em>NEW</em></footer>
+          <article class="collection-card collection-wedding" data-collection-theme="wedding">
+            <div class="collection-art" data-asset-slot="collection-wedding" aria-hidden="true"></div>
+            <footer><span>Свадьба</span><em>NEW</em></footer>
           </article>
-          <article class="collection-card collection-newyear">
-            <div class="collection-art"><span>2026</span></div>
-            <footer><span>🎆 Новый год</span><em>NEW</em></footer>
+          <article class="collection-card collection-newyear" data-collection-theme="newyear">
+            <div class="collection-art" data-asset-slot="collection-newyear" aria-hidden="true"></div>
+            <footer><span>Новый год</span><em>NEW</em></footer>
+          </article>
+          <article class="collection-card collection-preview" data-collection-preview hidden>
+            <div class="collection-art" data-asset-slot="collection-preview" aria-hidden="true"></div>
+            <footer><span data-collection-preview-label></span></footer>
           </article>
         </div>
       </div>
@@ -185,48 +172,60 @@
 
     <section class="section template-section">
       <div class="container split template-split">
-        <div class="template-preview" aria-hidden="true">
-          <div class="preview-stage">
-            <div class="preview-window">
-              <div class="preview-topbar"><i></i><i></i><i></i></div>
-              <div class="preview-canvas">
-                <div class="preview-title">С днём рождения!</div>
-                <div class="preview-photo"></div>
-              </div>
-              <div class="preview-timeline">
-                <span></span><span></span><span></span><span></span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="template-preview" data-template-preview data-asset-slot="template-birthday" aria-hidden="true"></div>
 
         <div class="section-copy template-copy">
           <h2>Видео по шаблону</h2>
           <p>Не знаете, с чего начать? Выберите готовый проект под ваше событие и добавьте свои фото и видео. Получите красивый ролик всего за несколько минут.</p>
-          <div class="chip-list left">
-            <button class="chip" type="button">С днём рождения</button>
-            <button class="chip" type="button">Юбилей</button>
-            <button class="chip" type="button">Свадьба</button>
-            <button class="chip" type="button">Выпускной</button>
-            <button class="chip" type="button">Семейный альбом</button>
-            <button class="chip" type="button">Новый год</button>
-            <button class="chip" type="button">Видео-подарок</button>
+          <div class="chip-list left" data-template-filter aria-label="Темы шаблонов">
+            <button class="chip active" type="button" data-template="birthday" aria-pressed="true">С днём рождения</button>
+            <button class="chip" type="button" data-template="anniversary" aria-pressed="false">Юбилей</button>
+            <button class="chip" type="button" data-template="wedding" aria-pressed="false">Свадьба</button>
+            <button class="chip" type="button" data-template="graduation" aria-pressed="false">Выпускной</button>
+            <button class="chip" type="button" data-template="family" aria-pressed="false">Семейный альбом</button>
+            <button class="chip" type="button" data-template="newyear" aria-pressed="false">Новый год</button>
+            <button class="chip" type="button" data-template="gift" aria-pressed="false">Видео-подарок</button>
           </div>
-          <a class="btn btn-primary" href="#pricing"><span class="btn-icon">↗</span>Купить</a>
+          <p class="template-selection" aria-live="polite">Выбран шаблон: <strong data-template-selection>С днём рождения</strong></p>
+          <a class="btn btn-primary" href="#pricing"><span class="btn-icon" data-asset-slot="buy-icon" aria-hidden="true"></span>Купить</a>
         </div>
       </div>
     </section>
 
-    <section class="section benefits-section">
+    <section class="section section-soft occasions-section">
       <div class="container">
-        <div class="section-head centered compact">
-          <h2>Монтаж становится проще</h2>
-          <p>Готовые материалы собраны в одном месте и сразу подходят для работы в редакторе.</p>
+        <h2 class="center-title">Контент для любого случая</h2>
+        <div class="occasions-grid">
+          <article class="occasion-card">
+            <div class="occasion-card__media" data-asset-slot="occasion-family" aria-hidden="true"></div>
+            <div class="occasion-card__body"><h3>Семейные праздники</h3><p>Титры, рамки, музыка и оформление для дней рождения, юбилеев и свадеб.</p></div>
+          </article>
+          <article class="occasion-card">
+            <div class="occasion-card__media" data-asset-slot="occasion-travel" aria-hidden="true"></div>
+            <div class="occasion-card__body"><h3>Путешествия</h3><p>Футажи и переходы для ярких видео из поездок и отпуска.</p></div>
+          </article>
+          <article class="occasion-card">
+            <div class="occasion-card__media" data-asset-slot="occasion-kids" aria-hidden="true"></div>
+            <div class="occasion-card__body"><h3>Для детей</h3><p>Стикеры, анимации и праздничные шаблоны для детских роликов.</p></div>
+          </article>
+          <article class="occasion-card">
+            <div class="occasion-card__media" data-asset-slot="occasion-work" aria-hidden="true"></div>
+            <div class="occasion-card__body"><h3>Работа и учёба</h3><p>Заставки и титры для презентаций, отчётов и обучающих роликов.</p></div>
+          </article>
         </div>
+      </div>
+    </section>
+
+    <section class="section benefits-section" id="advantages">
+      <div class="container">
+        <h2 class="center-title">Почему пользователи выбирают МедиаШОУ+</h2>
         <div class="benefits-grid">
-          <article><span>01</span><h3>Не тратьте время на поиск</h3><p>Музыка, эффекты, переходы и шаблоны уже собраны по темам.</p></article>
-          <article><span>02</span><h3>Используйте готовые сочетания</h3><p>Материалы подобраны в едином стиле и хорошо работают вместе.</p></article>
-          <article><span>03</span><h3>Получайте новые идеи</h3><p>Коллекции регулярно обновляются под сезоны, события и праздники.</p></article>
+          <article><span data-asset-slot="benefit-time" aria-hidden="true"></span><h3>Экономия времени</h3><p>Материалы уже готовы к использованию прямо в ВидеоМОНТАЖе.</p></article>
+          <article><span data-asset-slot="benefit-result" aria-hidden="true"></span><h3>Красивый результат без опыта</h3><p>Готовые шаблоны и эффекты помогают быстро оформить ролик.</p></article>
+          <article><span data-asset-slot="benefit-no-install" aria-hidden="true"></span><h3>Никаких дополнительных установок</h3><p>Каталог открывается прямо в редакторе.</p></article>
+          <article><span data-asset-slot="benefit-new" aria-hidden="true"></span><h3>Новые материалы каждый месяц</h3><p>Каталог регулярно пополняется свежими подборками.</p></article>
+          <article><span data-asset-slot="benefit-inspiration" aria-hidden="true"></span><h3>Всегда есть вдохновение</h3><p>Подборки помогают найти оформление под любое событие.</p></article>
+          <article><span data-asset-slot="benefit-quality" aria-hidden="true"></span><h3>Профессиональное качество</h3><p>Материалы оформлены в едином стиле и подходят для монтажа.</p></article>
         </div>
       </div>
     </section>
@@ -236,11 +235,11 @@
         <h2 class="center-title">Что меняется с МедиаШОУ+</h2>
         <div class="comparison-grid">
           <article class="comparison-card before">
-            <div class="comparison-title"><span>×</span><strong>Было</strong></div>
+            <div class="comparison-title"><span data-asset-slot="comparison-before" aria-hidden="true"></span><strong>Было</strong></div>
             <p>Часы поиска музыки, шаблонов и эффектов на разных сайтах. Файлы разного качества, ничего не стыкуется с проектом.</p>
           </article>
           <article class="comparison-card after">
-            <div class="comparison-title"><span>✓</span><strong>Стало</strong></div>
+            <div class="comparison-title"><span data-asset-slot="comparison-after" aria-hidden="true"></span><strong>Стало</strong></div>
             <p>Открыли каталог в редакторе, выбрали подборку, добавили в проект. Всё совместимо, всё в одном стиле и готово к работе.</p>
           </article>
         </div>
@@ -253,33 +252,17 @@
           <h2>Для кого создан МедиаШОУ+</h2>
           <p class="audience-lead">Подписка идеально подойдёт, если вы:</p>
           <ul>
-            <li>Создаёте семейные видеоархивы из отпусков и праздников</li>
-            <li>Оформляете поздравления для близких</li>
-            <li>Делаете ролики из фотографий и коротких видео</li>
-            <li>Снимаете школьные или творческие мероприятия</li>
-            <li>Готовите презентации и обучающие ролики</li>
-            <li>Не хотите разбираться в сложных программах для монтажа</li>
+            <li><span class="list-icon" data-asset-slot="audience-check" aria-hidden="true"></span>Создаёте семейные видеоархивы из отпусков и праздников</li>
+            <li><span class="list-icon" data-asset-slot="audience-check" aria-hidden="true"></span>Оформляете поздравления для близких</li>
+            <li><span class="list-icon" data-asset-slot="audience-check" aria-hidden="true"></span>Делаете ролики из фотографий и коротких видео</li>
+            <li><span class="list-icon" data-asset-slot="audience-check" aria-hidden="true"></span>Снимаете школьные или творческие мероприятия</li>
+            <li><span class="list-icon" data-asset-slot="audience-check" aria-hidden="true"></span>Готовите презентации и обучающие ролики</li>
+            <li><span class="list-icon" data-asset-slot="audience-check" aria-hidden="true"></span>Не хотите разбираться в сложных программах для монтажа</li>
           </ul>
-          <a class="btn btn-primary" href="#pricing"><span class="btn-icon">↗</span>Купить</a>
+          <a class="btn btn-primary" href="#pricing"><span class="btn-icon" data-asset-slot="buy-icon" aria-hidden="true"></span>Купить</a>
         </div>
 
-        <div class="audience-visual" aria-hidden="true">
-          <div class="screen-card">
-            <div class="screen-top"><i></i><i></i><i></i></div>
-            <div class="screen-grid">
-              <span class="thumb t1"></span>
-              <span class="thumb t2"></span>
-              <span class="thumb t3"></span>
-              <span class="thumb t4"></span>
-            </div>
-            <div class="screen-wave"></div>
-          </div>
-          <div class="materials-badge">
-            <small>Уже в МедиаШОУ+</small>
-            <strong>7000+</strong>
-            <span>материалов для творчества</span>
-          </div>
-        </div>
+        <div class="audience-visual" data-asset-slot="audience-editor" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -298,13 +281,13 @@
           </div>
           <div class="pricing-body">
             <ul>
-              <li><span>✓</span><b>1000+</b> шаблонов, титров и заставок</li>
-              <li><span>✓</span><b>1000+</b> переходов и видеоэффектов</li>
-              <li><span>✓</span><b>3000+</b> футажей, анимаций и стикеров</li>
-              <li><span>✓</span><b>2000+</b> музыкальных треков различных жанров</li>
-              <li><span>✓</span>Новые коллекции каждый месяц</li>
+              <li><span data-asset-slot="pricing-check" aria-hidden="true"></span><b>1000+</b> шаблонов, титров и заставок</li>
+              <li><span data-asset-slot="pricing-check" aria-hidden="true"></span><b>1000+</b> переходов и видеоэффектов</li>
+              <li><span data-asset-slot="pricing-check" aria-hidden="true"></span><b>3000+</b> футажей, анимаций и стикеров</li>
+              <li><span data-asset-slot="pricing-check" aria-hidden="true"></span><b>2000+</b> музыкальных треков различных жанров</li>
+              <li><span data-asset-slot="pricing-check" aria-hidden="true"></span>Новые коллекции каждый месяц</li>
             </ul>
-            <a class="btn btn-primary btn-wide" href="#"><span class="btn-icon">↗</span>Купить</a>
+            <button class="btn btn-primary btn-wide" type="button" disabled><span class="btn-icon" data-asset-slot="buy-icon" aria-hidden="true"></span>Купить</button>
             <small class="pricing-note">Всего 990₽ в год</small>
           </div>
         </article>
@@ -316,39 +299,39 @@
         <h2 class="center-title">Часто задаваемые вопросы</h2>
         <div class="faq-list">
           <article class="faq-item open">
-            <button type="button" aria-expanded="true">
+            <button id="faq-question-1" type="button" aria-expanded="true" aria-controls="faq-answer-1">
               <span>Что входит в подписку МедиаШОУ+?</span>
-              <i>⌃</i>
+              <i data-asset-slot="faq-chevron" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer"><p>В подписку входит полный каталог материалов: шаблоны, титры, заставки, переходы, видеоэффекты, футажи, анимации, стикеры и музыкальные треки. Каталог доступен прямо в ВидеоМОНТАЖе.</p></div>
+            <div class="faq-answer" id="faq-answer-1" role="region" aria-labelledby="faq-question-1"><p>В подписку входит полный каталог материалов: шаблоны, титры, заставки, переходы, видеоэффекты, футажи, анимации, стикеры и музыкальные треки. Каталог доступен прямо в ВидеоМОНТАЖе.</p></div>
           </article>
           <article class="faq-item">
-            <button type="button" aria-expanded="false">
+            <button id="faq-question-2" type="button" aria-expanded="false" aria-controls="faq-answer-2">
               <span>Нужно ли скачивать материалы отдельно?</span>
-              <i>⌃</i>
+              <i data-asset-slot="faq-chevron" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer"><p>Нет. Материалы выбираются внутри редактора и добавляются в проект без переходов на сторонние сайты.</p></div>
+            <div class="faq-answer" id="faq-answer-2" role="region" aria-labelledby="faq-question-2" hidden><p>Нет. Материалы выбираются внутри редактора и добавляются в проект без переходов на сторонние сайты.</p></div>
           </article>
           <article class="faq-item">
-            <button type="button" aria-expanded="false">
+            <button id="faq-question-3" type="button" aria-expanded="false" aria-controls="faq-answer-3">
               <span>На сколько действует подписка?</span>
-              <i>⌃</i>
+              <i data-asset-slot="faq-chevron" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer"><p>Тариф в макете рассчитан на один год использования каталога МедиаШОУ+.</p></div>
+            <div class="faq-answer" id="faq-answer-3" role="region" aria-labelledby="faq-question-3" hidden><p>Подписка на каталог МедиаШОУ+ действует один год.</p></div>
           </article>
           <article class="faq-item">
-            <button type="button" aria-expanded="false">
+            <button id="faq-question-4" type="button" aria-expanded="false" aria-controls="faq-answer-4">
               <span>Будут ли появляться новые материалы?</span>
-              <i>⌃</i>
+              <i data-asset-slot="faq-chevron" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer"><p>Да. Новые тематические и сезонные коллекции добавляются каждый месяц.</p></div>
+            <div class="faq-answer" id="faq-answer-4" role="region" aria-labelledby="faq-question-4" hidden><p>Да. Новые тематические и сезонные коллекции добавляются каждый месяц.</p></div>
           </article>
           <article class="faq-item">
-            <button type="button" aria-expanded="false">
+            <button id="faq-question-5" type="button" aria-expanded="false" aria-controls="faq-answer-5">
               <span>Можно ли использовать материалы в коммерческих видео?</span>
-              <i>⌃</i>
+              <i data-asset-slot="faq-chevron" aria-hidden="true"></i>
             </button>
-            <div class="faq-answer"><p>Условия коммерческого использования зависят от лицензии продукта. Перед публикацией коммерческого проекта проверьте актуальные условия лицензии ВидеоМОНТАЖа и МедиаШОУ+.</p></div>
+            <div class="faq-answer" id="faq-answer-5" role="region" aria-labelledby="faq-question-5" hidden><p>Условия коммерческого использования зависят от лицензии продукта. Перед публикацией коммерческого проекта проверьте актуальные условия лицензии ВидеоМОНТАЖа и МедиаШОУ+.</p></div>
           </article>
         </div>
       </div>
@@ -357,14 +340,13 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="#top" aria-label="МедиаШОУ+">
-        <span class="brand-mark" aria-hidden="true">▶</span>
-        <span class="brand-text">МедиаШОУ+</span>
+      <a class="brand" href="#top" aria-label="ВидеоМОНТАЖ — к началу страницы">
+        <span class="brand-mark" data-asset-slot="footer-logo" aria-hidden="true"></span>
       </a>
-      <small>© 2026 МедиаШОУ+ — каталог материалов для ВидеоМОНТАЖ</small>
+      <small>© 2026 ВидеоМОНТАЖ</small>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
