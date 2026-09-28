@@ -570,8 +570,8 @@ h1, h2, .center-title {
   background: #fff;
   box-shadow: var(--shadow);
 }
-.occasion-card__media { aspect-ratio: 1.6; }
-.occasion-card__body { padding: 14px 16px 20px; }
+.occasion-card__media {/* aspect-ratio: 1.6; */}
+.occasion-card__body {padding: 15px 15px 20px;height: 180px;}
 .occasion-card h3 { margin: 0 0 10px; font-size: 18px; line-height: 1.35; }
 .occasion-card p { margin: 0; font-size: 14px; line-height: 1.5; }
 
@@ -579,24 +579,46 @@ h1, h2, .center-title {
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  column-gap: 16px;
+  row-gap: 36px;
 }
 .benefits-grid article {
-  min-height: 190px;
-  padding: 24px;
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  align-content: start;
+  column-gap: 8px;
+  row-gap: 8px;
+  min-height: 181px;
+  padding: 18px;
+  box-sizing: border-box;
   border-radius: 20px;
-  background: #fff;
-  box-shadow: var(--shadow);
-  border: 1px solid rgba(37,40,49,.05);
+  background: #f8f8f8;
 }
 .benefits-grid article > span {
   display: block;
-  width: 28px;
-  height: 28px;
-  margin-bottom: 12px;
+  grid-column: 1;
+  grid-row: 1;
+  width: 30px;
+  height: 30px;
 }
-.benefits-grid h3 { margin: 0 0 8px; font-size: 18px; line-height: 1.35; }
-.benefits-grid p { margin: 0; font-size: 15px; }
+.benefits-grid h3 {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: center;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+.benefits-grid p {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
 
 .comparison-section { padding-top: 100px; }
 .center-title { text-align: center; margin-bottom: 40px; }
@@ -639,7 +661,7 @@ h1, h2, .center-title {
 .audience-inner {
   min-height: 749px;
   display: grid;
-  grid-template-columns: 520px 1fr;
+  grid-template-columns: 574px 1fr;
   gap: 65px;
   align-items: center;
   position: relative;
@@ -659,15 +681,25 @@ h1, h2, .center-title {
 }
 .audience-copy li {
   position: relative;
-  padding-left: 28px;
+  padding-left: 20px;
   line-height: 2;
 }
 .audience-copy .list-icon {
   position: absolute;
   left: 0;
-  top: .35em;
-  width: 18px;
-  height: 18px;
+  top: 0;
+  width: 16px;
+  height: 2em;
+  display: grid;
+  place-items: center;
+  color: #29c0ff;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+}
+.audience-copy .list-icon::before {
+  content: "✓";
 }
 .audience-visual {
   position: relative;
@@ -707,13 +739,33 @@ h1, h2, .center-title {
 .pricing-body li {
   display: flex;
   align-items: flex-start;
-  gap: 7px;
+  gap: 8px;
   font-size: 15px;
   line-height: 1.65;
   color: var(--text);
 }
-.pricing-body li span { width: 18px; height: 18px; flex: 0 0 18px; }
-.pricing-body li b { margin-right: 2px; }
+.pricing-body li > span {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-top: 2px;
+  border-radius: 5px;
+  background: #29c0ff;
+}
+.pricing-body li > span::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 4px;
+  height: 7px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.pricing-body li .pricing-copy { min-width: 0; }
+.pricing-body li .pricing-copy b { margin-right: 2px; }
 .pricing-note {
   display: block;
   margin-top: 12px;
