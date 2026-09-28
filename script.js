@@ -97,8 +97,11 @@
   const setFaq = (item, open) => {
     item.classList.toggle('open', open);
     item.querySelector('button').setAttribute('aria-expanded', String(open));
-    item.querySelector('.faq-answer').hidden = !open;
+    const answer = item.querySelector('.faq-answer');
+    answer.setAttribute('aria-hidden', String(!open));
+    answer.inert = !open;
   };
+  faqItems.forEach(item => setFaq(item, item.classList.contains('open')));
   faqItems.forEach(item => {
     item.querySelector('button').addEventListener('click', () => {
       const shouldOpen = !item.classList.contains('open');

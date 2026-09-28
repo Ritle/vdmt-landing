@@ -803,11 +803,35 @@ h1, h2, .center-title {
   width: 22px;
   height: 22px;
   flex: 0 0 22px;
+  display: grid;
+  place-items: center;
+}
+.faq-item button i::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid currentColor;
+  border-bottom: 2px solid currentColor;
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform .25s ease;
+}
+.faq-item.open button i::before {
+  transform: translateY(2px) rotate(225deg);
 }
 .faq-answer {
-  overflow: visible;
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  opacity: 0;
+  transition: grid-template-rows .32s ease, opacity .22s ease;
+}
+.faq-item.open .faq-answer {
+  grid-template-rows: 1fr;
+  opacity: 1;
 }
 .faq-answer p {
+  min-height: 0;
+  overflow: hidden;
   margin: 0;
   padding: 0 35px 28px;
   max-width: 1030px;
@@ -942,4 +966,5 @@ h1, h2, .center-title {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .btn, .chip, .main-nav, .menu-toggle span { transition: none; }
+  .faq-answer, .faq-item button i::before { transition: none; }
 }
