@@ -744,7 +744,7 @@ h1, h2, .center-title {
   line-height: 1.65;
   color: var(--text);
 }
-.pricing-body li > span {
+.pricing-body li > [data-asset-slot="pricing-check"] {
   position: relative;
   width: 18px;
   height: 18px;
@@ -753,7 +753,7 @@ h1, h2, .center-title {
   border-radius: 5px;
   background: #29c0ff;
 }
-.pricing-body li > span::before {
+.pricing-body li > [data-asset-slot="pricing-check"]::before {
   content: "";
   position: absolute;
   top: 4px;
@@ -764,7 +764,7 @@ h1, h2, .center-title {
   border-width: 0 2px 2px 0;
   transform: rotate(45deg);
 }
-.pricing-body li .pricing-copy { min-width: 0; }
+.pricing-body li .pricing-copy { flex: 1 1 auto; min-width: 0; }
 .pricing-body li .pricing-copy b { margin-right: 2px; }
 .pricing-note {
   display: block;
