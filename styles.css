@@ -1,4 +1,7 @@
 :root {
+  --font-family: "Open Sans", sans-serif;
+  --second-family: "Montserrat", sans-serif;
+  --third-family: "Lora", sans-serif;
   --bg-dark: #222734;
   --bg-dark-2: #252831;
   --text: #252831;
@@ -23,7 +26,7 @@ html { scroll-behavior: smooth; }
 main[id], section[id] { scroll-margin-top: 80px; }
 body {
   margin: 0;
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: var(--font-family);
   color: var(--text);
   background: #fff;
   font-size: 18px;
@@ -158,7 +161,7 @@ img { max-width: 100%; display: block; }
 }
 .eyebrow span { width: 16px; height: 16px; flex: 0 0 auto; }
 h1, h2, .center-title {
-  font-family: "Lora", Georgia, serif;
+  font-family: var(--third-family);
   font-weight: 700;
   margin: 0;
 }
@@ -703,7 +706,44 @@ h1, h2, .center-title {
 }
 .audience-visual {
   position: relative;
-  height: 540px;
+  width: 757px;
+  height: 435px;
+}
+.audience-visual img {
+  display: block;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+.audience-stat-card {
+  position: absolute;
+  z-index: 1;
+  left: -12px;
+  bottom: 4px;
+  width: 286px;
+  height: 126px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  border-radius: 12px;
+  background: #fff;
+  color: var(--text);
+  box-shadow: 0 4px 16px rgba(0,0,0,.12);
+}
+.audience-stat-card > span,
+.audience-stat-card > small {
+  color: var(--text-muted);
+  font-size: 17px;
+  line-height: 1.35;
+}
+.audience-stat-card strong {
+  font-family: var(--third-family);
+  font-size: 48px;
+  line-height: 1.1;
 }
 .pricing-section { padding: 120px 0; }
 .pricing-card {
@@ -723,7 +763,7 @@ h1, h2, .center-title {
   gap: 4px;
 }
 .pricing-top > span { color: var(--blue); font-size: 18px; font-weight: 700; margin-bottom: 12px; }
-.pricing-top strong { font-family: "Lora", serif; font-size: 48px; line-height: 1.2; }
+.pricing-top strong { font-family: var(--third-family); font-size: 48px; line-height: 1.2; }
 .pricing-top small { color: var(--muted); font-size: 15px; font-weight: 300; }
 .pricing-body {
   padding: 32px;
@@ -816,14 +856,17 @@ h1, h2, .center-title {
 }
 .faq-answer {
   display: grid;
-  grid-template-rows: 0fr;
+  grid-template-rows: minmax(0, 0fr);
   overflow: hidden;
   opacity: 0;
-  transition: grid-template-rows .32s ease, opacity .22s ease;
+  visibility: hidden;
+  transition: grid-template-rows .32s ease, opacity .22s ease, visibility 0s linear .32s;
 }
 .faq-item.open .faq-answer {
-  grid-template-rows: 1fr;
+  grid-template-rows: minmax(0, 1fr);
   opacity: 1;
+  visibility: visible;
+  transition: grid-template-rows .32s ease, opacity .22s ease, visibility 0s;
 }
 .faq-answer p {
   min-height: 0;
@@ -889,7 +932,7 @@ h1, h2, .center-title {
   .template-preview { margin: 0 auto; }
   .template-copy { max-width: 620px; }
   .audience-inner { padding: 90px 0; }
-  .audience-visual { width: 720px; max-width: 100%; margin: 0 auto; }
+  .audience-visual { width: 720px; max-width: 100%; height: auto; aspect-ratio: 757 / 435; margin: 0 auto; }
   .occasions-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -944,7 +987,7 @@ h1, h2, .center-title {
   .comparison-card { min-height: auto; }
   .audience-inner { min-height: auto; }
   .audience-copy li { line-height: 1.65; margin-bottom: 8px; }
-  .audience-visual { height: 390px; }
+  .audience-visual { height: auto; aspect-ratio: 757 / 435; }
 
   .pricing-card { width: 100%; max-width: 423px; }
   .faq-item button { padding: 22px; font-size: 18px; }
