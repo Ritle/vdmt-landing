@@ -58,8 +58,24 @@
 
   const templateFilter = document.querySelector('[data-template-filter]');
   const templatePreview = document.querySelector('[data-template-preview]');
+  const templatePreviewImage = document.querySelector('[data-template-preview-image]');
   const templateSelection = document.querySelector('[data-template-selection]');
-  if (templateFilter && templatePreview && templateSelection) {
+  const templatePreviewAssets = {
+    birthday: 'assets/video-preview-1.png',
+    anniversary: 'assets/video-preview-2.png',
+    wedding: 'assets/video-preview-3.png',
+    graduation: 'assets/video-preview-4.png',
+    family: 'assets/video-preview-5.png',
+    newyear: 'assets/video-preview-6.png',
+    gift: 'assets/video-preview-7.png'
+  };
+  if (templateFilter && templatePreview && templatePreviewImage && templateSelection) {
+    templatePreviewImage.addEventListener('error', () => {
+      const fallbackSrc = templatePreviewImage.dataset.fallbackSrc;
+      if (fallbackSrc && templatePreviewImage.getAttribute('src') !== fallbackSrc) {
+        templatePreviewImage.setAttribute('src', fallbackSrc);
+      }
+    });
     templateFilter.querySelectorAll('[data-template]').forEach(chip => {
       chip.addEventListener('click', () => {
         templateFilter.querySelectorAll('[data-template]').forEach(item => {
@@ -68,6 +84,10 @@
           item.setAttribute('aria-pressed', String(active));
         });
         templatePreview.dataset.assetSlot = `template-${chip.dataset.template}`;
+        templatePreview.dataset.videoTemplate = chip.dataset.template;
+        templatePreviewImage.dataset.assetSlot = `template-video-${chip.dataset.template}`;
+        templatePreviewImage.src = templatePreviewAssets[chip.dataset.template];
+        templatePreviewImage.alt = `Превью видео: ${chip.textContent.trim()}`;
         templateSelection.textContent = chip.textContent.trim();
       });
     });
