@@ -1,18 +1,12 @@
-# Места под графику
+# Графика страницы
 
-Графику из Figma пользователь выгрузит отдельно. Сейчас страница не загружает ни SVG, ни PNG: до передачи файлов в разметке оставлены пустые элементы с атрибутом `data-asset-slot`.
+Страница использует локальные PNG из этого каталога и пользовательские SVG, уже вставленные в `index.html`. Не заменяйте их сгенерированной графикой.
 
-Слоты по секциям:
+- Первый экран: `hero-newyear.png`, `hero-wedding.png`, `hero-birthday.png`.
+- Категории редактора: `feature-1.png` — стикеры, `feature-3.png` — рамки, `feature-2.png` — шаблоны, `feature-4.png` — футажи.
+- Подборки: `gift-2.png` — день рождения, `gift-1.png` — свадьба, `gift-3.png` — Новый год.
+- Сценарии: `content-1.png` … `content-4.png`.
+- Блок «Для кого»: `audience-visual.png` в контейнере 757 × 435 px на широком экране.
+- Футер: `LOGO.png` размером 289 × 39 px.
 
-- Шапка и подвал: `header-logo` и `footer-logo` — пустые места 186 × 39 px под логотип «ВидеоМОНТАЖ».
-- Кнопки и интерфейс: `buy-icon`, `subscription-icon`, `faq-chevron`.
-- Первый экран: `hero-newyear`, `hero-wedding`, `hero-birthday` — по 260 × 190 px в карточках.
-- Статистика: `stat-templates`, `stat-effects`, `stat-footage`, `stat-music` — по 36 × 36 px.
-- Категории: `category-stickers`, `category-frames`, `category-templates`, `category-footage` — блоки высотой 130 px на десктопе.
-- Подборки: `collection-birthday`, `collection-wedding`, `collection-newyear`. При выборе остальных тем появляется пустой слот `collection-<код темы>`.
-- Шаблоны: `template-<код темы>` (560 × 412 px на десктопе). Код меняется при выборе тематической метки.
-- Сценарии: `occasion-family`, `occasion-travel`, `occasion-kids`, `occasion-work`.
-- Скриншот редактора в блоке «Для кого»: `audience-editor` (высота блока 540 px).
-- Остальные значки: `benefit-time`, `benefit-result`, `benefit-no-install`, `benefit-new`, `benefit-inspiration`, `benefit-quality`, `comparison-before`, `comparison-after`, `audience-check`, `pricing-check`.
-
-Размеры самих экспортируемых файлов и итоговое кадрирование уточним после получения графики. Имеющиеся в каталоге `hero-*.png` сейчас не подключены к странице и сохранены без изменений.
+Превью шаблонов переключаются между `video-preview-1.png` … `video-preview-7.png`. Сейчас есть только первый файл: до загрузки остальных используется запасное первое изображение. Для тем подборок без готовых PNG сохранён пустой слот. Недостающие изображения пользователь экспортирует из Figma.
