@@ -144,8 +144,8 @@ img { max-width: 100%; display: block; }
   z-index: 1;
   top: 0;
   left: 50%;
-  width: 1915px;
-  height: 659px;
+  width: max(1180px, 100%);
+  height: auto;
   max-width: none;
   transform: translateX(-50%);
   pointer-events: none;
@@ -1013,6 +1013,22 @@ h1, h2, .center-title {
   .container { width: min(100% - 28px, var(--container)); }
 
   .hero { min-height: auto; }
+  .hero-decor { display: none; }
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+      radial-gradient(circle 7px at 88% 7%, rgba(41, 192, 255, .65), transparent),
+      radial-gradient(circle 12px at 9% 25%, rgba(89, 167, 165, .35), transparent),
+      radial-gradient(circle 5px at 82% 39%, rgba(255, 100, 0, .6), transparent),
+      radial-gradient(circle 8px at 15% 64%, rgba(41, 192, 255, .55), transparent),
+      radial-gradient(circle 12px at 91% 81%, rgba(89, 167, 165, .3), transparent),
+      radial-gradient(circle 5px at 31% 92%, rgba(255, 100, 0, .55), transparent),
+      radial-gradient(circle at 100% 56%, rgba(255, 100, 0, .14), transparent 45%);
+  }
   .hero-inner {
     grid-template-columns: minmax(0, 1fr);
     padding-top: 64px;
