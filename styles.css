@@ -753,7 +753,7 @@ h1, h2, .center-title {
 .audience-stat-card {
   position: absolute;
   z-index: 1;
-  left: -12px;
+  left: 20px;
   bottom: 4px;
   width: 286px;
   height: 126px;
@@ -1059,6 +1059,7 @@ h1, h2, .center-title {
 
 @media (max-width: 480px) {
   .hero-visual { transform: scale(.72); transform-origin: left top; width: 344px; margin-left: 0; height: 320px; margin-bottom: -72px; }
+  .audience-stat-card { left: 0; width: min(286px, 100%); }
   .editor-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .chip-list { justify-content: flex-start; }
   .collection-card footer { font-size: 14px; }
