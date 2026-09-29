@@ -108,4 +108,48 @@
       faqItems.forEach(other => setFaq(other, other === item && shouldOpen));
     });
   });
+
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealGroups = [
+      ['.split-editor .section-copy', 'left'],
+      ['.editor-cards', 'right'],
+      ['.collections-section .section-head', 'left'],
+      ['.collections-section .chip-list', 'right'],
+      ['.collection-grid', 'left'],
+      ['.template-preview', 'left'],
+      ['.template-copy', 'right'],
+      ['.occasions-section .center-title', 'left'],
+      ['.occasions-grid', 'right'],
+      ['.benefits-section .center-title', 'left'],
+      ['.benefits-grid', 'right'],
+      ['.comparison-section .center-title', 'left'],
+      ['.comparison-grid', 'right'],
+      ['.audience-copy', 'left'],
+      ['.audience-visual', 'right'],
+      ['.pricing-section .section-head', 'left'],
+      ['.pricing-card', 'right'],
+      ['.faq-section .center-title', 'left'],
+      ['.faq-list', 'right']
+    ];
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '0px 0px -30px 0px', threshold: .08 });
+    const visibleEdge = window.innerHeight - 30;
+
+    revealGroups.forEach(([selector, direction]) => {
+      document.querySelectorAll(selector).forEach(element => {
+        element.classList.add('reveal-item', `reveal-from-${direction}`);
+        if (element.getBoundingClientRect().top <= visibleEdge) {
+          element.classList.add('is-visible');
+        } else {
+          revealObserver.observe(element);
+        }
+      });
+    });
+    document.documentElement.classList.add('reveal-enabled');
+  }
 })();
